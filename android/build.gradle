@@ -2,14 +2,14 @@ group = "com.example.lynx"
 version = "1.0-SNAPSHOT"
 
 buildscript {
-    ext.kotlin_version = "1.8.22"
+    ext.kotlin_version = "1.9.0"
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.7.0")
+        classpath("com.android.tools.build:gradle:8.9.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
@@ -50,7 +50,10 @@ android {
     dependencies {
         testImplementation("org.jetbrains.kotlin:kotlin-test")
         testImplementation("org.mockito:mockito-core:5.0.0")
-        
+
+        // https://mvnrepository.com/artifact/io.flutter/flutter_embedding_debug
+        // implementation 'io.flutter:flutter_embedding_debug:1.0.0-e25787fa5758e5a73eed49e5ec3f44d2811f13f3'
+
 
         // lynx dependencies
         implementation "org.lynxsdk.lynx:lynx:3.2.0-rc.0"
@@ -58,7 +61,7 @@ android {
         implementation "org.lynxsdk.lynx:lynx-trace:3.2.0-rc.0"
         implementation "org.lynxsdk.lynx:primjs:2.11.1-rc.0"
     }
-
+ 
     testOptions {
         unitTests.all {
             useJUnitPlatform()
