@@ -51,6 +51,7 @@ android {
         testImplementation("org.jetbrains.kotlin:kotlin-test")
         testImplementation("org.mockito:mockito-core:5.0.0")
         
+
         // lynx dependencies
         implementation "org.lynxsdk.lynx:lynx:3.2.0-rc.0"
         implementation "org.lynxsdk.lynx:lynx-jssdk:3.2.0-rc.0"

@@ -6,6 +6,7 @@
 // https://flutter.dev/to/pubspec-plugin-platforms.
 
 import 'lynx_platform_interface.dart';
+export 'widget.dart';
 
 class Lynx {
   Future<String?> getPlatformVersion() {
