@@ -14,21 +14,7 @@ class _LynxViewState extends State<LynxView> {
   @override
   void initState() {
     super.initState();
-    // _getTextureId();
   }
-
-  // Future<void> _getTextureId() async {
-  //   try {
-  //     final id = await _channel.invokeMethod<int>('getTextureId');
-  //     if (mounted) {
-  //       setState(() {
-  //         _textureId = id;
-  //       });
-  //     }
-  //   } catch (e) {
-  //     debugPrint('Error getting texture ID: $e');
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
