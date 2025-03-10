@@ -2,8 +2,10 @@ package com.example.lynx
 
 import android.app.Application
 import android.content.Context
+import android.graphics.Color
 import android.view.Surface
 import android.view.View
+import androidx.annotation.ColorInt
 import com.lynx.tasm.LynxEnv
 import com.lynx.tasm.LynxView
 import com.lynx.tasm.LynxViewBuilder
@@ -42,7 +44,7 @@ class LynxPlugin : FlutterPlugin, MethodCallHandler {
     )
 
     lynxView = viewBuilder.build(applicationContext)
-    // lynxView?.setBackgroundColor(Color.WHITE)
+    lynxView?.setBackgroundColor(Color.BLUE);
 
     val uri = "main.lynx.bundle"
     lynxView?.renderTemplateUrl(uri, "")
