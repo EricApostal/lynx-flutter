@@ -9,34 +9,33 @@ class LynxView extends StatefulWidget {
 }
 
 class _LynxViewState extends State<LynxView> {
-  static const MethodChannel _channel = MethodChannel('lynx');
   int? _textureId;
 
   @override
   void initState() {
     super.initState();
-    _getTextureId();
+    // _getTextureId();
   }
 
-  Future<void> _getTextureId() async {
-    try {
-      final id = await _channel.invokeMethod<int>('getTextureId');
-      if (mounted) {
-        setState(() {
-          _textureId = id;
-        });
-      }
-    } catch (e) {
-      debugPrint('Error getting texture ID: $e');
-    }
-  }
+  // Future<void> _getTextureId() async {
+  //   try {
+  //     final id = await _channel.invokeMethod<int>('getTextureId');
+  //     if (mounted) {
+  //       setState(() {
+  //         _textureId = id;
+  //       });
+  //     }
+  //   } catch (e) {
+  //     debugPrint('Error getting texture ID: $e');
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
-    if (_textureId == null) {
-      return const Center(child: CircularProgressIndicator());
-    }
-
-    return Texture(textureId: _textureId!);
+    return AndroidView(
+      viewType: 'lynx_view',
+      creationParams: {},
+      creationParamsCodec: const StandardMessageCodec(),
+    );
   }
 }
